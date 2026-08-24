@@ -1,0 +1,520 @@
+{
+  "version": "7.0",
+  "characters": {
+    "aino": { "en": "Aino", "ru": "Айно" },
+    "alyosha": { "en": "Alyosha", "ru": "Алёша" },
+    "albedo": { "en": "Albedo", "ru": "Альбедо" },
+    "alhaitham": { "en": "Alhaitham", "ru": "Аль-Хайтам" },
+    "arlecchino": { "en": "Arlecchino", "ru": "Арлекино" },
+    "ayaka": { "en": "Kamisato Ayaka", "ru": "Камисато Аяка" },
+    "ayato": { "en": "Kamisato Ayato", "ru": "Камисато Аято" },
+    "baizhu": { "en": "Baizhu", "ru": "Бай Чжу" },
+    "barbara": { "en": "Barbara", "ru": "Барбара" },
+    "bennett": { "en": "Bennett", "ru": "Беннет" },
+    "beidou": { "en": "Beidou", "ru": "Бэй Доу" },
+    "varesa": { "en": "Varesa", "ru": "Вареса" },
+    "varka": { "en": "Varka", "ru": "Варка" },
+    "venti": { "en": "Venti", "ru": "Венти" },
+    "ganyu": { "en": "Ganyu", "ru": "Гань Юй" },
+    "gorou": { "en": "Gorou", "ru": "Горо" },
+    "dahlia": { "en": "Dahlia", "ru": "Далия" },
+    "jean": { "en": "Jean", "ru": "Джинн" },
+    "diluc": { "en": "Diluc", "ru": "Дилюк" },
+    "diona": { "en": "Diona", "ru": "Диона" },
+    "dori": { "en": "Dori", "ru": "Дори" },
+    "durin": { "en": "Durin", "ru": "Дурин" },
+    "dehya": { "en": "Dehya", "ru": "Дэхья" },
+    "yelan": { "en": "Yelan", "ru": "Е Лань" },
+    "yoimiya": { "en": "Yoimiya", "ru": "Ёимия" },
+    "iansan": { "en": "Iansan", "ru": "Иансан" },
+    "illuga": { "en": "Illuga", "ru": "Иллуги" },
+    "ineffa": { "en": "Ineffa", "ru": "Инеффа" },
+    "itto": { "en": "Arataki Itto", "ru": "Аратаки Итто" },
+    "ifa": { "en": "Ifa", "ru": "Ифа" },
+    "gaming": { "en": "Gaming", "ru": "Ка Мин" },
+    "kaveh": { "en": "Kaveh", "ru": "Кавех" },
+    "kazuha": { "en": "Kaedehara Kazuha", "ru": "Каэдэхара Кадзуха" },
+    "candace": { "en": "Candace", "ru": "Кандакия" },
+    "kachina": { "en": "Kachina", "ru": "Качина" },
+    "kinich": { "en": "Kinich", "ru": "Кинич" },
+    "kirara": { "en": "Kirara", "ru": "Кирара" },
+    "klee": { "en": "Klee", "ru": "Кли" },
+    "clorinde": { "en": "Clorinde", "ru": "Клоринда" },
+    "kokomi": { "en": "Sangonomiya Kokomi", "ru": "Сангономия Кокоми" },
+    "collei": { "en": "Collei", "ru": "Коллеи" },
+    "columbina": { "en": "Columbina", "ru": "Коломбина" },
+    "kuki": { "en": "Kuki Shinobu", "ru": "Куки Синобу" },
+    "keqing": { "en": "Keqing", "ru": "Кэ Цин" },
+    "kaeya": { "en": "Kaeya", "ru": "Кэйя" },
+    "layla": { "en": "Layla", "ru": "Лайла" },
+    "lanyan": { "en": "Lan Yan", "ru": "Лань Янь" },
+    "lauma": { "en": "Lauma", "ru": "Лаума" },
+    "lisa": { "en": "Lisa", "ru": "Лиза" },
+    "lynette": { "en": "Lynette", "ru": "Линетт" },
+    "lyney": { "en": "Lyney", "ru": "Лини" },
+    "linnea": { "en": "Linnea", "ru": "Линнея" },
+    "lohen": { "en": "Lohen", "ru": "Лоэн" },
+    "mavuika": { "en": "Mavuika", "ru": "Мавуика" },
+    "mizuki": { "en": "Yumemizuki Mizuki", "ru": "Юмэмидзуки Мидзуки" },
+    "mika": { "en": "Mika", "ru": "Мика" },
+    "mona": { "en": "Mona", "ru": "Мона" },
+    "mualani": { "en": "Mualani", "ru": "Муалани" },
+    "navia": { "en": "Navia", "ru": "Навия" },
+    "nahida": { "en": "Nahida", "ru": "Нахида" },
+    "neuvillette": { "en": "Neuvillette", "ru": "Нёвиллет" },
+    "nefer": { "en": "Nefer", "ru": "Нефер" },
+    "nicole": { "en": "Nicole", "ru": "Николь" },
+    "nilou": { "en": "Nilou", "ru": "Нилу" },
+    "ningguang": { "en": "Ningguang", "ru": "Нин Гуан" },
+    "noelle": { "en": "Noelle", "ru": "Ноэлль" },
+    "odette": { "en": "Odette", "ru": "Одетта" },
+    "ororon": { "en": "Ororon", "ru": "Оророн" },
+    "prune": { "en": "Prune", "ru": "Прюн" },
+    "raiden": { "en": "Raiden Shogun", "ru": "Райдэн" },
+    "wriothesley": { "en": "Wriothesley", "ru": "Ризли" },
+    "rosaria": { "en": "Rosaria", "ru": "Розария" },
+    "razor": { "en": "Razor", "ru": "Рэйзор" },
+    "cyno": { "en": "Cyno", "ru": "Сайно" },
+    "sandrone": { "en": "Sandrone", "ru": "Сандроне" },
+    "sara": { "en": "Kujou Sara", "ru": "Кудзё Сара" },
+    "sucrose": { "en": "Sucrose", "ru": "Сахароза" },
+    "sayu": { "en": "Sayu", "ru": "Саю" },
+    "sethos": { "en": "Sethos", "ru": "Сетос" },
+    "sigewinne": { "en": "Sigewinne", "ru": "Сиджвин" },
+    "xingqiu": { "en": "Xingqiu", "ru": "Син Цю" },
+    "xinyan": { "en": "Xinyan", "ru": "Синь Янь" },
+    "citlali": { "en": "Citlali", "ru": "Ситлали" },
+    "skirk": { "en": "Skirk", "ru": "Скирк" },
+    "wanderer": { "en": "Wanderer", "ru": "Странник" },
+    "xiangling": { "en": "Xiangling", "ru": "Сян Лин" },
+    "xianyun": { "en": "Xianyun", "ru": "Сянь Юнь" },
+    "xiao": { "en": "Xiao", "ru": "Сяо" },
+    "tartaglia": { "en": "Tartaglia", "ru": "Тарталья" },
+    "tighnari": { "en": "Tighnari", "ru": "Тигнари" },
+    "chiori": { "en": "Chiori", "ru": "Тиори" },
+    "thoma": { "en": "Thoma", "ru": "Тома" },
+    "faruzan": { "en": "Faruzan", "ru": "Фарузан" },
+    "fischl": { "en": "Fischl", "ru": "Фишль" },
+    "flins": { "en": "Flins", "ru": "Флинс" },
+    "freminet": { "en": "Freminet", "ru": "Фремине" },
+    "furina": { "en": "Furina", "ru": "Фурина" },
+    "hutao": { "en": "Hu Tao", "ru": "Ху Тао" },
+    "heizou": { "en": "Shikanoin Heizou", "ru": "Сиканоин Хэйдзо" },
+    "zibai": { "en": "Zibai", "ru": "Цзы Бай" },
+    "qiqi": { "en": "Qiqi", "ru": "Ци Ци" },
+    "chasca": { "en": "Chasca", "ru": "Часка" },
+    "zhongli": { "en": "Zhongli", "ru": "Чжун Ли" },
+    "chongyun": { "en": "Chongyun", "ru": "Чун Юнь" },
+    "charlotte": { "en": "Charlotte", "ru": "Шарлотта" },
+    "chevreuse": { "en": "Chevreuse", "ru": "Шеврёз" },
+    "xilonen": { "en": "Xilonen", "ru": "Шилонен" },
+    "shenhe": { "en": "Shenhe", "ru": "Шэнь Хэ" },
+    "aloy": { "en": "Aloy", "ru": "Элой" },
+    "amber": { "en": "Amber", "ru": "Эмбер" },
+    "emilie": { "en": "Emilie", "ru": "Эмилия" },
+    "eula": { "en": "Eula", "ru": "Эола" },
+    "escoffier": { "en": "Escoffier", "ru": "Эскофье" },
+    "yunjin": { "en": "Yun Jin", "ru": "Юнь Цзинь" },
+    "jahoda": { "en": "Jahoda", "ru": "Ягода" },
+    "yanfei": { "en": "Yanfei", "ru": "Янь Фэй" },
+    "yaoyao": { "en": "Yaoyao", "ru": "Яо Яо" },
+    "yae": { "en": "Yae Miko", "ru": "Яэ Мико" }
+  },
+  "sets": {
+    "i_mond_1": {
+      "en": "Amidst Poetic Pondering",
+      "ru": "В поэтических раздумьях",
+      "liked_by": ["eula","fischl","jean","lisa","mona","dahlia","durin"]
+    },
+    "i_mond_2": {
+      "en": "Amidst Whispering Winds",
+      "ru": "Среди шёпота ветров",
+      "liked_by": ["barbara","eula","noelle"]
+    },
+    "i_liyue_1": {
+      "en": "Feiyun Study Room",
+      "ru": "Кабинет Фэйюнь",
+      "liked_by": ["baizhu","ningguang","xingqiu","yunjin","zhongli","lanyan","zibai"]
+    },
+    "i_liyue_2": {
+      "en": "Cloudy Haze Dream-Court",
+      "ru": "Павильон сновидений",
+      "liked_by": ["hutao","yanfei","ganyu","keqing","chongyun","gaming"]
+    },
+    "i_mond_3": {
+      "en": "Secret Research Lab",
+      "ru": "Секретная лаборатория",
+      "liked_by": ["albedo","klee","lisa","sucrose","prune"]
+    },
+    "i_liyue_3": {
+      "en": "Cottage Kitchen",
+      "ru": "Дом древесного дыма",
+      "liked_by": ["baizhu","mika","mona","razor","tartaglia","xiangling","xiao","yaoyao"]
+    },
+    "i_inazuma_1": {
+      "en": "Eternal Domain of Fleeting Dreams",
+      "ru": "Вечный зал мимолётных грёз",
+      "liked_by": ["sayu","kokomi","heizou"]
+    },
+    "i_inazuma_2": {
+      "en": "A Thousand Swings",
+      "ru": "Тысяча взмахов",
+      "liked_by": ["raiden","ayaka"]
+    },
+    "i_inazuma_3": {
+      "en": "Scholarly Trove",
+      "ru": "Научная тропа",
+      "liked_by": ["kokomi","kuki"]
+    },
+    "i_inazuma_4": {
+      "en": "Of Maple and Tea Scents Entwined",
+      "ru": "Ароматы клёна и чая сплелись воедино",
+      "liked_by": ["thoma","kazuha","mizuki"]
+    },
+    "i_sumeru_1": {
+      "en": "Forest Patrol Anecdotes",
+      "ru": "Небылицы лесного дозора",
+      "liked_by": ["tighnari","collei"]
+    },
+    "i_sumeru_2": {
+      "en": "Coalesced Brilliance",
+      "ru": "Средоточие блеска",
+      "liked_by": ["dori","nilou"]
+    },
+    "i_sumeru_3": {
+      "en": "Fervid Aroma",
+      "ru": "С пылу с жару",
+      "liked_by": ["alhaitham","dehya","sethos"]
+    },
+    "i_sumeru_4": {
+      "en": "Of Settled Thoughts",
+      "ru": "Глубокие раздумья",
+      "liked_by": ["alhaitham","cyno","faruzan","skirk"]
+    },
+    "i_sumeru_5": {
+      "en": "A Farewell Brief to Bustle and Bother",
+      "ru": "Затишье среди суеты",
+      "liked_by": ["nahida","layla"]
+    },
+    "i_sumeru_6": {
+      "en": "Dwelling Amidst the Sands",
+      "ru": "Приют среди песков",
+      "liked_by": ["candace"]
+    },
+    "i_fontaine_1": {
+      "en": "Key to a Stable Work-Rest Cycle",
+      "ru": "Ключ к балансу работы и отдыха",
+      "liked_by": ["charlotte","chevreuse"]
+    },
+    "i_fontaine_2": {
+      "en": "Strict Adherence to Office Codes",
+      "ru": "Строгое соблюдение рабочего регламента",
+      "liked_by": ["neuvillette","clorinde"]
+    },
+    "i_fontaine_3": {
+      "en": "Garb for Glorious Gourmet",
+      "ru": "Убранство для кулинарных шедевров",
+      "liked_by": ["furina","navia","escoffier"]
+    },
+    "i_fontaine_4": {
+      "en": "Perfectly-Drawn Focus",
+      "ru": "В центре внимания",
+      "liked_by": ["lynette","lyney","arlecchino"]
+    },
+    "i_fontaine_5": {
+      "en": "Continuous Clockwork Inspiration",
+      "ru": "Заводное вдохновение",
+      "liked_by": ["freminet"]
+    },
+    "i_fontaine_6": {
+      "en": "Wellspring of Rule Violation Prevention",
+      "ru": "Обитель строжайших законов",
+      "liked_by": ["wriothesley"]
+    },
+    "i_natlan_1": {
+      "en": "Carefully Considered Words",
+      "ru": "Взвешенные слова",
+      "liked_by": ["chasca","mavuika"]
+    },
+    "i_natlan_2": {
+      "en": "Arena's Toast to Triumph",
+      "ru": "Победный тост на стадионе",
+      "liked_by": ["mavuika"]
+    },
+    "i_natlan_3": {
+      "en": "Sleep Now, Rest Your Weary Head",
+      "ru": "Отдыхай в уютном мире грёз",
+      "liked_by": ["kachina","citlali","varesa"]
+    },
+    "i_nodkrai_1": {
+      "en": "A Comfy Room for Guests From Near and Far",
+      "ru": "Уютная комната для гостей со всего мира",
+      "liked_by": ["linnea","nicole"]
+    },
+    "i_nodkrai_2": {
+      "en": "Sweet Slumber Beneath the Moon",
+      "ru": "Сон под луной",
+      "liked_by": ["lauma"]
+    },
+    "i_nodkrai_3": {
+      "en": "The Orderly Grid of Secrets",
+      "ru": "Упорядоченная структура тайн",
+      "liked_by": ["nefer","jahoda"]
+    },
+    "i_nodkrai_4": {
+      "en": "The Bestest and Warmest Home",
+      "ru": "Самый лучший и уютный дом",
+      "liked_by": ["ineffa","aino"]
+    },
+    "i_nodkrai_5": {
+      "en": "Pre-Battle Respite",
+      "ru": "Перерыв перед боем",
+      "liked_by": ["flins","illuga"]
+    },
+    "i_nodkrai_6": {
+      "en": "A Tea Party at Leisure",
+      "ru": "Чаепитие на досуге",
+      "liked_by": ["sandrone"]
+    },
+    "o_mond_1": {
+      "en": "Weapon Forging Station",
+      "ru": "Станция ковки оружия",
+      "liked_by": ["noelle","bennett","diluc","diona","varka"]
+    },
+    "o_mond_2": {
+      "en": "Idyllic Town",
+      "ru": "Идиллический городок",
+      "liked_by": ["diona","amber","razor"]
+    },
+    "o_mond_3": {
+      "en": "Bird and Blossom Park",
+      "ru": "Парк с птицами и цветами",
+      "liked_by": ["venti","rosaria","barbara","jean","kaeya","dahlia"]
+    },
+    "o_liyue_1": {
+      "en": "Gathering of Gourmets",
+      "ru": "Сборище гурманов",
+      "liked_by": ["beidou","xiangling","ganyu","xinyan","tartaglia","yelan","gaming","xianyun"]
+    },
+    "o_liyue_2": {
+      "en": "Glittering Street",
+      "ru": "Сверкающая улица",
+      "liked_by": ["ningguang","keqing","yanfei","xingqiu","zhongli","shenhe","yunjin","lanyan"]
+    },
+    "o_liyue_3": {
+      "en": "Qingce Cloud Residence",
+      "ru": "Облачная резиденция Цинцэ",
+      "liked_by": ["xinyan","xiao","hutao","qiqi","shenhe","yelan","yaoyao","xianyun","zibai"]
+    },
+    "o_mond_4": {
+      "en": "Of Hunting and Dancing",
+      "ru": "Охотничий и песенный поход",
+      "liked_by": ["amber","sucrose","klee","beidou","aloy","lohen"]
+    },
+    "o_mond_5": {
+      "en": "Iter Ad Astra Abyssosque",
+      "ru": "Путешествие к звёздам и к безднам",
+      "liked_by": ["bennett","qiqi","chongyun","fischl","albedo","aloy","mika"]
+    },
+    "o_mond_6": {
+      "en": "Dawn Orchard",
+      "ru": "Предрассветный сад",
+      "liked_by": ["diluc","kaeya","venti","rosaria"]
+    },
+    "o_inazuma_1": {
+      "en": "Court of the Upright",
+      "ru": "Сад справедливости",
+      "liked_by": ["sara","ayato"]
+    },
+    "o_inazuma_2": {
+      "en": "Wakeful Spring",
+      "ru": "Бодрящий горячий источник",
+      "liked_by": ["yoimiya","yae","gorou","heizou","chiori","mizuki"]
+    },
+    "o_inazuma_3": {
+      "en": "Rural Concealment",
+      "ru": "Сельская тень",
+      "liked_by": ["sayu","gorou"]
+    },
+    "o_inazuma_4": {
+      "en": "Ancient Branch Shrine",
+      "ru": "Святилище древней ветви",
+      "liked_by": ["raiden","yae"]
+    },
+    "o_inazuma_5": {
+      "en": "Military Exercise Grounds",
+      "ru": "Тренировочный лагерь",
+      "liked_by": ["sara"]
+    },
+    "o_inazuma_6": {
+      "en": "Jade Wilds",
+      "ru": "Нефритовая пустошь",
+      "liked_by": ["kazuha","itto"]
+    },
+    "o_inazuma_7": {
+      "en": "Summer Night's Recollection",
+      "ru": "Воспоминание о летней ночи",
+      "liked_by": ["ayaka","itto","ayato"]
+    },
+    "o_inazuma_8": {
+      "en": "Sakura-Hued Street",
+      "ru": "Улица цвета сакуры",
+      "liked_by": ["yoimiya","thoma","kuki","kirara","skirk"]
+    },
+    "o_sumeru_1": {
+      "en": "Amidst Prospering Markets",
+      "ru": "Шумный базар",
+      "liked_by": ["dori","faruzan","sethos"]
+    },
+    "o_sumeru_2": {
+      "en": "Deep in the Quiet Forest",
+      "ru": "Под лесной сенью",
+      "liked_by": ["collei","cyno"]
+    },
+    "o_sumeru_3": {
+      "en": "Of Twirling Dances Unfettered",
+      "ru": "Кружение танца",
+      "liked_by": ["kaveh","nilou"]
+    },
+    "o_sumeru_4": {
+      "en": "Quiet Times by the Riverbank",
+      "ru": "Прибрежная тишь",
+      "liked_by": ["wanderer"]
+    },
+    "o_sumeru_5": {
+      "en": "Setekh Demurs",
+      "ru": "Оплот среди ветров",
+      "liked_by": ["candace","layla"]
+    },
+    "o_sumeru_6": {
+      "en": "The Traveling Troop's Pomp",
+      "ru": "Величие войскового расположения",
+      "liked_by": ["dehya"]
+    },
+    "o_sumeru_7": {
+      "en": "Amidst Scents and Serenity",
+      "ru": "Средь ароматов и покоя",
+      "liked_by": ["kaveh","nahida","kirara"]
+    },
+    "o_sumeru_8": {
+      "en": "Chorus of Desert and Wood",
+      "ru": "Единство леса и пустыни",
+      "liked_by": ["tighnari","wanderer"]
+    },
+    "o_fontaine_1": {
+      "en": "Court of Justice's Placid Days",
+      "ru": "Спокойные дни Дворца справедливости",
+      "liked_by": ["charlotte","arlecchino"]
+    },
+    "o_fontaine_2": {
+      "en": "Court of Justice's Booming Commerce",
+      "ru": "Процветающая коммерция Дворца справедливости",
+      "liked_by": ["lynette","lyney","chiori"]
+    },
+    "o_fontaine_3": {
+      "en": "Court of Justice's Fresh Mist",
+      "ru": "Свежая дымка Дворца справедливости",
+      "liked_by": ["neuvillette","furina","emilie"]
+    },
+    "o_fontaine_4": {
+      "en": "Poisson the Unassuming",
+      "ru": "Непритязательная деревня Пуассон",
+      "liked_by": ["navia"]
+    },
+    "o_fontaine_5": {
+      "en": "Undersea Merusea's Luster",
+      "ru": "Подводный блеск Меруси",
+      "liked_by": ["freminet","sigewinne"]
+    },
+    "o_fontaine_6": {
+      "en": "Full Force Forward in the Forbidden Fortress",
+      "ru": "Полный вперёд в Запретную крепость",
+      "liked_by": ["wriothesley","chevreuse","sigewinne"]
+    },
+    "o_fontaine_7": {
+      "en": "The Nation of Hydro's Mottled Colors",
+      "ru": "Пёстрые цвета Царства воды",
+      "liked_by": ["clorinde","emilie","escoffier","sandrone"]
+    },
+    "o_natlan_1": {
+      "en": "Fomenting Fashion at the Fair",
+      "ru": "Модные веяния на ярмарке",
+      "liked_by": ["mualani"]
+    },
+    "o_natlan_2": {
+      "en": "Born Among Searing Flames",
+      "ru": "Рождённые в обжигающем пламени",
+      "liked_by": ["xilonen","iansan"]
+    },
+    "o_natlan_3": {
+      "en": "Treading the Untrodden Path",
+      "ru": "Идущие по неведомому пути",
+      "liked_by": ["kinich","ororon"]
+    },
+    "o_natlan_5": {
+      "en": "Children of Echoes' Passion",
+      "ru": "Страсть Детей Эха",
+      "liked_by": ["kachina","xilonen"]
+    },
+    "o_natlan_6": {
+      "en": "People of the Springs' Relaxation",
+      "ru": "Безмятежность Народа Родников",
+      "liked_by": ["mualani"]
+    },
+    "o_natlan_7": {
+      "en": "Scions of the Canopy's Duty",
+      "ru": "Долг Потомков Крон",
+      "liked_by": ["kinich"]
+    },
+    "o_natlan_8": {
+      "en": "Flower-Feather Clan's Conquest",
+      "ru": "Завоевание клана Цветочного Пера",
+      "liked_by": ["chasca","ifa"]
+    },
+    "o_natlan_9": {
+      "en": "Masters of the Night-Wind's Tranquility",
+      "ru": "Спокойствие Повелителей Ночного Ветра",
+      "liked_by": ["ororon","citlali"]
+    },
+    "o_natlan_10": {
+      "en": "Gallant March of the Collective of Plenty",
+      "ru": "Доблестный марш Удела Благодатных Земель",
+      "liked_by": ["iansan","varesa"]
+    },
+    "o_natlan_11": {
+      "en": "Companions' Haven",
+      "ru": "Приют товарищей",
+      "liked_by": ["ifa"]
+    },
+    "o_nodkrai_1": {
+      "en": "Wilderness of the Far North",
+      "ru": "Дикие земли крайнего севера",
+      "liked_by": ["durin","nicole","linnea"]
+    },
+    "o_nodkrai_2": {
+      "en": "Bustling Border Town",
+      "ru": "Оживлённый приграничный городок",
+      "liked_by": ["nefer","jahoda","varka","lohen","prune"]
+    },
+    "o_nodkrai_3": {
+      "en": "Tranquil Prayer Under the Moon",
+      "ru": "Тихая молитва под луной",
+      "liked_by": ["lauma","columbina"]
+    },
+    "o_nodkrai_4": {
+      "en": "Solitary Light in the Long Night",
+      "ru": "Одинокий фонарь в бесконечной ночи",
+      "liked_by": ["flins","illuga"]
+    },
+    "o_nodkrai_5": {
+      "en": "Promising Workshops",
+      "ru": "Развивающаяся мастерская",
+      "liked_by": ["ineffa","aino"]
+    },
+    "o_nodkrai_6": {
+      "en": "Crescent Moon Serenity",
+      "ru": "Тихий пейзаж новой луны",
+      "liked_by": ["columbina"]
+    }
+  }
+}

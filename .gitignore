@@ -1,0 +1,8 @@
+error.log
+*.rar
+*.7z
+.venv
+__pycache__
+.idea
+account_*.json
+SPTracker
