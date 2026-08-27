@@ -439,20 +439,32 @@ class ProgressEditor(QDialog):
             return
 
         filtered_chars = self.owned_characters
-        if self.selected_set_id:
-            set_chars = self.sets_characters.get(self.selected_set_id, [])
+        current_set_id = self.selected_set_id
+
+        if current_set_id:
+            set_chars = self.sets_characters.get(current_set_id, [])
             if not set_chars:
                 self.show_info(get_text("no_characters_for_set", self.current_lang))
                 return
             filtered_chars = [(char_id, name) for char_id, name in self.owned_characters
                               if char_id in set_chars]
 
+        progress = self.account_data.get("progress", [])
+        existing_progress = set()
+        for entry in progress:
+            char_id = entry.get("character_id")
+            set_id = entry.get("set_id")
+            if char_id and set_id:
+                existing_progress.add((char_id, set_id))
+
         selector = CharacterSelector(
             parent=self,
             characters=filtered_chars,
             current_lang=self.current_lang,
             game_data=self.game_data,
-            dark_theme=self.dark_theme
+            dark_theme=self.dark_theme,
+            existing_progress=existing_progress,
+            current_set_id=current_set_id
         )
 
         result = selector.exec()
@@ -470,8 +482,10 @@ class ProgressEditor(QDialog):
         self.log("select_set: called")
 
         filtered_sets = self.available_sets
-        if self.selected_character_id:
-            char_sets = self.characters_sets.get(self.selected_character_id, [])
+        current_char_id = self.selected_character_id
+
+        if current_char_id:
+            char_sets = self.characters_sets.get(current_char_id, [])
             if not char_sets:
                 self.show_info(get_text("progress_no_sets_text", self.current_lang))
                 self.clear_character()
@@ -479,12 +493,24 @@ class ProgressEditor(QDialog):
             filtered_sets = [(set_id, name) for set_id, name in self.available_sets
                              if set_id in char_sets]
 
+        progress = self.account_data.get("progress", [])
+        existing_progress = set()
+        for entry in progress:
+            char_id = entry.get("character_id")
+            set_id = entry.get("set_id")
+            if char_id and set_id:
+                existing_progress.add((char_id, set_id))
+
         selector = SetSelector(
             parent=self,
             sets=filtered_sets,
             current_lang=self.current_lang,
-            dark_theme=self.dark_theme
+            dark_theme=self.dark_theme,
+            existing_progress=existing_progress
         )
+
+        if current_char_id:
+            selector.set_character_id(current_char_id)
 
         result = selector.exec()
         if result == QDialog.DialogCode.Accepted:

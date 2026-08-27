@@ -10,6 +10,7 @@ from PySide6.QtWidgets import (
     QListWidget, QListWidgetItem
 )
 from PySide6.QtCore import Qt
+from PySide6.QtGui import QColor
 
 from locales import get_text
 
@@ -17,11 +18,13 @@ from locales import get_text
 class SetSelector(QDialog):
     """Окно выбора набора со списком"""
 
-    def __init__(self, parent=None, sets=None, current_lang="en", dark_theme=True):
+    def __init__(self, parent=None, sets=None, current_lang="en", dark_theme=True, existing_progress=None):
         super().__init__(parent)
         self.sets = sets or []
         self.current_lang = current_lang
         self.dark_theme = dark_theme
+        self.existing_progress = existing_progress or set()
+        self.selected_char_id = None
         self.selected_id = None
         self.selected_name = None
 
@@ -231,8 +234,27 @@ class SetSelector(QDialog):
         filtered.sort(key=lambda x: x[1].lower())
 
         for set_id, name in filtered:
-            item = QListWidgetItem(name)
+            has_progress = False
+            if self.selected_char_id and self.existing_progress:
+                has_progress = (self.selected_char_id, set_id) in self.existing_progress
+
+            display_text = f"✅ {name}" if has_progress else name
+
+            item = QListWidgetItem(display_text)
             item.setData(Qt.ItemDataRole.UserRole, set_id)
+
+            if has_progress:
+                font = item.font()
+                font.setBold(True)
+                item.setFont(font)
+
+                if self.dark_theme:
+                    item.setBackground(QColor(30, 80, 30))
+                    item.setForeground(QColor(150, 255, 150))
+                else:
+                    item.setBackground(QColor(180, 230, 180))
+                    item.setForeground(QColor(0, 130, 0))
+
             self.list_widget.addItem(item)
 
         self.count_label.setText(get_text("found_count", self.current_lang).format(len(filtered)))
@@ -266,6 +288,11 @@ class SetSelector(QDialog):
 
     def get_selected_name(self):
         return self.selected_name
+
+    def set_character_id(self, char_id):
+        """Устанавливает ID персонажа для проверки существующего прогресса"""
+        self.selected_char_id = char_id
+        self.load_sets(self.search_input.text() if hasattr(self, 'search_input') else "")
 
     def closeEvent(self, event):
         self.log("closeEvent: called")

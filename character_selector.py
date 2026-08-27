@@ -22,12 +22,15 @@ class CharacterSelector(QDialog):
 
     COLS = 4
 
-    def __init__(self, parent=None, characters=None, current_lang="en", game_data=None, dark_theme=True):
+    def __init__(self, parent=None, characters=None, current_lang="en", game_data=None, dark_theme=True,
+                 existing_progress=None, current_set_id=None):
         super().__init__(parent)
         self.characters = characters or []
         self.current_lang = current_lang
         self.game_data = game_data
         self.dark_theme = dark_theme
+        self.existing_progress = existing_progress or set()
+        self.current_set_id = current_set_id
         self.selected_id = None
         self.selected_name = None
 
@@ -260,50 +263,87 @@ class CharacterSelector(QDialog):
             row = i // self.COLS
             col = i % self.COLS
 
-            tile = self.create_tile(char_id, name)
+            tile = self.create_tile(char_id, name, self.current_set_id)
             self.grid_layout.addWidget(tile, row, col)
 
         self.count_label.setText(get_text("found_count", self.current_lang).format(len(filtered)))
         self.log(f"  loaded {len(filtered)} characters")
 
-    def create_tile(self, char_id, name):
+    def create_tile(self, char_id, name, set_id=None):
         """Создаёт одну плитку персонажа"""
         tile = QPushButton()
         tile.setFixedSize(160, 190)
 
-        # Стиль плитки зависит от темы
+        has_progress = False
+        if set_id and self.existing_progress:
+            has_progress = (char_id, set_id) in self.existing_progress
+
         if self.dark_theme:
-            tile.setStyleSheet("""
-                QPushButton {
-                    background-color: #2d2d2d;
-                    border: 2px solid #444444;
-                    border-radius: 8px;
-                    padding: 5px;
-                }
-                QPushButton:hover {
-                    background-color: #3d3d3d;
-                    border: 2px solid #4CAF50;
-                }
-                QPushButton:pressed {
-                    background-color: #4d4d4d;
-                }
-            """)
+            if has_progress:
+                tile.setStyleSheet("""
+                    QPushButton {
+                        background-color: #2a5a2a;
+                        border: 3px solid #66BB6A;
+                        border-radius: 8px;
+                        padding: 5px;
+                    }
+                    QPushButton:hover {
+                        background-color: #3a6a3a;
+                        border: 3px solid #81C784;
+                    }
+                    QPushButton:pressed {
+                        background-color: #4a7a4a;
+                    }
+                """)
+            else:
+                tile.setStyleSheet("""
+                    QPushButton {
+                        background-color: #2d2d2d;
+                        border: 2px solid #444444;
+                        border-radius: 8px;
+                        padding: 5px;
+                    }
+                    QPushButton:hover {
+                        background-color: #3d3d3d;
+                        border: 2px solid #4CAF50;
+                    }
+                    QPushButton:pressed {
+                        background-color: #4d4d4d;
+                    }
+                """)
         else:
-            tile.setStyleSheet("""
-                QPushButton {
-                    background-color: #ffffff;
-                    border: 2px solid #cccccc;
-                    border-radius: 8px;
-                    padding: 5px;
-                }
-                QPushButton:hover {
-                    background-color: #f0f0f0;
-                    border: 2px solid #4CAF50;
-                }
-                QPushButton:pressed {
-                    background-color: #e0e0e0;
-                }
-            """)
+            if has_progress:
+                tile.setStyleSheet("""
+                    QPushButton {
+                        background-color: #c8e6c9;
+                        border: 3px solid #4CAF50;
+                        border-radius: 8px;
+                        padding: 5px;
+                    }
+                    QPushButton:hover {
+                        background-color: #a5d6a7;
+                        border: 3px solid #66BB6A;
+                    }
+                    QPushButton:pressed {
+                        background-color: #81c784;
+                    }
+                """)
+            else:
+                tile.setStyleSheet("""
+                    QPushButton {
+                        background-color: #ffffff;
+                        border: 2px solid #cccccc;
+                        border-radius: 8px;
+                        padding: 5px;
+                    }
+                    QPushButton:hover {
+                        background-color: #f0f0f0;
+                        border: 2px solid #4CAF50;
+                    }
+                    QPushButton:pressed {
+                        background-color: #e0e0e0;
+                    }
+                """)
 
         layout = QVBoxLayout(tile)
         layout.setContentsMargins(5, 5, 5, 5)
@@ -349,13 +389,30 @@ class CharacterSelector(QDialog):
         name_label = QLabel(name)
         name_label.setAlignment(Qt.AlignCenter)
 
+        if has_progress:
+            font = QFont()
+            font.setBold(True)
+            name_label.setFont(font)
+
         if self.dark_theme:
-            name_label.setStyleSheet("color: #e0e0e0; font-size: 12px; font-weight: bold;")
+            if has_progress:
+                name_label.setStyleSheet("color: #81C784; font-size: 13px; font-weight: bold;")
+            else:
+                name_label.setStyleSheet("color: #e0e0e0; font-size: 12px; font-weight: bold;")
         else:
-            name_label.setStyleSheet("color: #333333; font-size: 12px; font-weight: bold;")
+            if has_progress:
+                name_label.setStyleSheet("color: #2E7D32; font-size: 13px; font-weight: bold;")
+            else:
+                name_label.setStyleSheet("color: #333333; font-size: 12px; font-weight: bold;")
 
         name_label.setWordWrap(True)
         layout.addWidget(name_label)
+
+        if has_progress:
+            indicator = QLabel("✅")
+            indicator.setAlignment(Qt.AlignCenter)
+            indicator.setStyleSheet("font-size: 18px; background-color: transparent;")
+            layout.addWidget(indicator)
 
         tile.setProperty("char_id", char_id)
         tile.setProperty("char_name", name)
