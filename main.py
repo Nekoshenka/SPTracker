@@ -176,6 +176,9 @@ sys.excepthook = global_exception_handler
 class MainWindow(QMainWindow):
     """Главное окно приложения"""
 
+    DEFAULT_THEME = "dark"      # "dark" или "light"
+    DEFAULT_LANGUAGE = "en"      # "en" или "ru"
+
     accounts_updated = Signal()
 
     def __init__(self):
@@ -204,6 +207,8 @@ class MainWindow(QMainWindow):
         self.update_accounts_combo()
         self.update_ui_texts()
         self.update_theme()
+
+        self._apply_account_settings()
 
         self.accounts_updated.connect(self.on_accounts_updated)
 
@@ -345,6 +350,7 @@ class MainWindow(QMainWindow):
         global CURRENT_THEME
         CURRENT_THEME = "dark" if self.dark_theme else "light"
         self.update_theme()
+        self._save_account_settings()
 
     def update_theme(self):
         """Обновляет тему всего приложения"""
@@ -703,6 +709,7 @@ class MainWindow(QMainWindow):
         self.account_combo.blockSignals(False)
         self.update_ui_texts()
         self.update_buttons_state()
+        self._apply_account_settings()
 
     def on_account_selected(self, index):
         if index < 0 or index >= len(self.accounts):
@@ -715,8 +722,30 @@ class MainWindow(QMainWindow):
         self.current_account_index = index
         self.current_account_data = self.accounts[index]["data"]
         self.current_account = self.current_account_data.get("account_name", "Unknown")
+        self._apply_account_settings()
         self.update_ui_texts()
         self.update_buttons_state()
+
+    def _apply_account_settings(self):
+        """Применяет настройки (тему и язык) из текущего аккаунта"""
+        if self.current_account_data is None:
+            return
+
+        theme = self.current_account_data.get("theme", self.DEFAULT_THEME)
+        if theme == "light" and self.dark_theme:
+            self.dark_theme = False
+            self.update_theme()
+        elif theme == "dark" and not self.dark_theme:
+            self.dark_theme = True
+            self.update_theme()
+
+        language = self.current_account_data.get("language", self.DEFAULT_LANGUAGE)
+        if language != self.current_language:
+            self.current_language = language
+            global CURRENT_LANG
+            CURRENT_LANG = self.current_language
+            self.lang_btn.setText(self.current_language.upper())
+            self.update_ui_texts()
 
     def on_accounts_updated(self):
         self.scan_accounts()
@@ -794,6 +823,10 @@ class MainWindow(QMainWindow):
         if editor.exec() == QDialog.DialogCode.Accepted:
             self.scan_accounts()
             self.update_accounts_combo()
+            if self.accounts:
+                self.current_account_index = 0
+                self.current_account_data = self.accounts[0]["data"]
+                self._save_account_settings()
 
     def open_edit_account(self):
         if self.game_data is None:
@@ -906,6 +939,7 @@ class MainWindow(QMainWindow):
 
         self.lang_btn.setText(self.current_language.upper())
         self.update_ui_texts()
+        self._save_account_settings()
 
     def update_buttons_state(self):
         """Обновляет состояние кнопок в зависимости от наличия аккаунта"""
@@ -926,6 +960,25 @@ class MainWindow(QMainWindow):
         self.open_folder_btn.setToolTip(get_text("open_folder_tooltip", self.current_language))
         self.update_center_buttons()
         self.update_buttons_state()
+
+    def _save_account_settings(self):
+        """Сохраняет текущие настройки (тему и язык) в файл аккаунта"""
+        if self.current_account_data is None or self.current_account_index < 0:
+            return
+
+        self.current_account_data["theme"] = "dark" if self.dark_theme else "light"
+        self.current_account_data["language"] = self.current_language
+
+        if self.current_account_index < len(self.accounts):
+            account = self.accounts[self.current_account_index]
+            file_path = account["path"]
+
+            try:
+                with open(file_path, "w", encoding="utf-8") as f:
+                    json.dump(self.current_account_data, f, ensure_ascii=False, indent=2)
+                self.log(f"Настройки сохранены в {file_path}")
+            except Exception as e:
+                self.log(f"Ошибка сохранения настроек: {e}")
 
     def open_accounts_folder(self):
         accounts_dir = self.get_accounts_dir()
@@ -999,6 +1052,12 @@ class MainWindow(QMainWindow):
         msg.setText(text)
         self._style_message_box(msg)
         msg.exec()
+
+    def log(self, message):
+        """Вывод отладочного сообщения"""
+        from datetime import datetime
+        timestamp = datetime.now().strftime("%H:%M:%S.%f")[:-3]
+        print(f"[{timestamp}] MainWindow: {message}")
 
     def close_app(self):
         self.close()
