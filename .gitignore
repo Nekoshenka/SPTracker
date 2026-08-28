@@ -6,3 +6,5 @@ __pycache__
 .idea
 account_*.json
 SPTracker
+main.build
+main.dist
