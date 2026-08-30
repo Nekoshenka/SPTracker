@@ -126,6 +126,24 @@ class SetSelector(QDialog):
                 background-color: #4CAF50;
                 color: white;
             }
+            /* Стиль для скроллбара (тёмная тема) */
+            QListWidget QScrollBar:vertical {
+                background-color: #2d2d2d;
+                width: 12px;
+                border-radius: 6px;
+            }
+            QListWidget QScrollBar::handle:vertical {
+                background-color: #555555;
+                border-radius: 6px;
+                min-height: 20px;
+            }
+            QListWidget QScrollBar::handle:vertical:hover {
+                background-color: #777777;
+            }
+            QListWidget QScrollBar::add-line:vertical,
+            QListWidget QScrollBar::sub-line:vertical {
+                height: 0px;
+            }
             QScrollArea {
                 border: none;
                 background-color: #1e1e1e;
@@ -187,6 +205,24 @@ class SetSelector(QDialog):
             QListWidget::item:selected {
                 background-color: #4CAF50;
                 color: white;
+            }
+            /* Стиль для скроллбара (светлая тема) */
+            QListWidget QScrollBar:vertical {
+                background-color: #f0f0f0;
+                width: 12px;
+                border-radius: 6px;
+            }
+            QListWidget QScrollBar::handle:vertical {
+                background-color: #cccccc;
+                border-radius: 6px;
+                min-height: 20px;
+            }
+            QListWidget QScrollBar::handle:vertical:hover {
+                background-color: #aaaaaa;
+            }
+            QListWidget QScrollBar::add-line:vertical,
+            QListWidget QScrollBar::sub-line:vertical {
+                height: 0px;
             }
             QScrollArea {
                 border: none;
